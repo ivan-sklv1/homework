@@ -1,11 +1,11 @@
 name = 'Ivan'
 print(name)
 
-age = 22
+age: int = 22
 print(age)
 
-new_age = 23
-print(new_age)
+age += 1
+print(age)
 
 is_student = True
 print(is_student)
