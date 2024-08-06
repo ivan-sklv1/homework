@@ -4,8 +4,15 @@ def calculate_structure_sum(*args):
         if isinstance(element, list):
             total_size += calculate_structure_sum(*element)
         elif isinstance(element, dict):
-            total_size += sum(element.values())
-            total_size += calculate_structure_sum(*element.keys())
+            for key, value in element.items():
+                if isinstance(value, str) and isinstance(key, int) or isinstance(key, float):
+                    total_size += key + len(value)
+                elif isinstance(value, int) or isinstance(value, float) and isinstance(key, str):
+                    total_size += len(key) + value
+                elif isinstance(value, str) and isinstance(key, str):
+                    total_size += len(key) + len(value)
+                elif isinstance(value, int) or isinstance(value, float) and isinstance(key, int) or isinstance(key, float):
+                    total_size += key + value
         elif isinstance(element, tuple):
             total_size += calculate_structure_sum(*element)
         elif isinstance(element, set):
@@ -27,4 +34,3 @@ data_structure = [
 
 result = calculate_structure_sum(data_structure)
 print(result)
-
