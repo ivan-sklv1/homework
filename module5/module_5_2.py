@@ -10,7 +10,7 @@ class House:
         else:
             print('Такого этажа не существует.')
             
-    def __len__(self) -> str:
+    def __len__(self):
         return self.number_on_floors
     
     def __str__(self) -> str:
