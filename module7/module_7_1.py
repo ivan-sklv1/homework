@@ -37,6 +37,8 @@ class Shop:
                 else:
                     with open(self.__file_name, 'a') as file2:
                         file2.write(f"{product} \n")
+                        file2.close()
+            file.close()
 
 
 s1 = Shop()
