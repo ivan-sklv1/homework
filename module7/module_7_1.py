@@ -24,9 +24,9 @@ class Shop:
 
     def get_products(self):
         file = open(self.__file_name, 'r')
-        result = pprint(file.read())
+        pprint(file.read())
         file.close()
-        return result
+        
 
     def add(self, *products):
         with open(self.__file_name, 'r') as file:
@@ -37,8 +37,6 @@ class Shop:
                 else:
                     with open(self.__file_name, 'a') as file2:
                         file2.write(f"{product} \n")
-                        file2.close()
-            file.close()
 
 
 s1 = Shop()
