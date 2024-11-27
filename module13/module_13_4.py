@@ -54,12 +54,10 @@ async def send_calories(message: types.Message, state: UserState):
     await message.answer('Если хотите получить информацию о ваших калорийных потреблениях, введите /calories')
     await state.finish()
 
-
-@dp.message_handler
-
 @dp.message_handler()
 async def all_messages(message):
     await message.answer('Введите команду /calories, чтобы рассчитать норму калорий.')
+
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
